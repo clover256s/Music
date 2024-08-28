@@ -181,6 +181,64 @@ li {
 .PLAY_CONTROL_BAR {
   grid-area: play-bar;
   height: 60px;
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
   background: rgb(255, 255, 255);
   border-top: 1px solid rgb(245, 245, 245);
+}
+.MusicMe {
+  display: flex;
+  width: 320px;
+}
+.MusicMe img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.Msg {
+  padding-left: 10px;
+}
+._music_name {
+  font-size: 14px;
+}
+._music_author {
+  font-size: 13px;
+  color: rgb(129, 129, 129);
+}
+._music_currentTime {
+  font-size: 12px;
+  color: rgb(129, 129, 129);
+}
+._control_playback {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._control_playback li {
+  margin: 0 15px;
+  font-size: 28px;
+}
+._control_playback li:nth-of-type(1) {
+  font-size: 22px;
+}
+
+._control_playback li:nth-of-type(3) {
+  font-size: 35px;
+}
+
+._control_playback li:nth-of-type(5) {
+  font-size: 20px;
+}
+
+.control-flow {
+  display: flex;
+  margin-left: 150px;
+  align-items: center;
+}
+
+.control-flow li {
+  margin: 0 10px;
 }
