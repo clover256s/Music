@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .BODY_CONTAINER {
+    grid-template-areas:
+      "top-bar"
+      "homepage"
+      "play-bar";
+    grid-template-rows: 50px 1fr 60px;
+    grid-template-columns: 1fr;
+  }
+
+  .SIDEBAR_ {
+    display: none;
+  }
+}
+
+/* 布局容器 */
+.BODY_CONTAINER {
+  display: grid;
+  grid-template-areas:
+    "top-bar top-bar"
+    "sidebar homepage"
+    "play-bar play-bar";
+  grid-template-rows: 50px 1fr 60px; /* 顶部功能栏、内容区、播放控制栏的高度 */
+  grid-template-columns: 200px 1fr; /* 侧边栏和内容区的宽度 */
+  height: 100vh; /* 占满整个视口高度 */
+}
+
+/* 顶部功能栏 */
+.TOP_FUNCTION_BAR {
+  grid-area: top-bar;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: rgb(249, 249, 249);
+}
+.WINDOW_CONTROL_AREA {
+  width: 200px;
+  height: 50px;
+  background: rgb(246, 246, 246);
+}
+
+.navigationHeader {
+  flex: 1;
+  display: flex;
+  background: #f1f1f1;
+}
+
+.navigationMenu {
+  flex: 1;
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+.navigationMenu li {
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+.userToolbar {
+  display: flex;
+  align-items: center;
+}
+
+.userToolbar div {
+  color: rgb(74, 74, 74);
+  margin: 0 8px;
+}
+
+.userToolbar .searchInput {
+  width: 150px;
+  height: 25px;
+  background: rgb(236, 236, 236);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+.userToolbar .searchInput .search_input {
+  width: 150px;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgb(50, 50, 50);
+}
+
+.search_btn {
+  position: absolute;
+  left: 6px;
+  top: 2.4px;
+  background: none;
+  outline: none;
+  border: none;
+  color: rgba(87, 87, 87, 0.5);
+}
+
+.icon-zuidahua1 {
+  font-size: 13px;
+}
+
+/* 侧边栏 */
+.SIDEBAR_ {
+  grid-area: sidebar;
+  height: 100%;
+
+  background: rgb(237, 237, 237);
+}
+
+._personal_information {
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+._personal_information img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+._personal_information span {
+  margin-left: 10px;
+  font-size: 13px;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏超出的文本 */
+  text-overflow: ellipsis;
+  width: 70%;
+}
+
+.primaryMenu {
+  margin-top: 10px;
+}
+.primaryMenu li {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  height: 35px;
+  padding-left: 10px;
+}
+
+.primaryMenu li:hover {
+  background: rgb(230, 230, 230);
+}
+
+.primaryMenu li span {
+  margin-right: 5px !important;
+  font-size: 20px;
+}
+
+.primaryMenu li:nth-of-type(2) span {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 200;
+  margin-right: 5px !important;
+}
+
+/* 主页内容区 */
+.HOMEPAGE {
+  grid-area: homepage;
+  height: 100%;
+  background: white;
+  overflow: auto; /* 如果内容超出视口，可以滚动 */
+}
+
+/* 播放控制栏 */
+.PLAY_CONTROL_BAR {
+  grid-area: play-bar;
+  height: 60px;
+  background: rgb(255, 255, 255);
+  border-top: 1px solid rgb(245, 245, 245);
+}
